@@ -6,20 +6,20 @@
 spec:describe-nti a api:API
 	; api:base "/doc/"
 	; rdfs:label "Experimento con dataset calidad del aire"
-	; api:sparqlEndpoint <http://localhost:9999/blazegraph/sparql>
+	; api:sparqlEndpoint <http://localhost:5000/blazegraph/sparql>
 	; api:defaultViewer api:labelledDescribeViewer
 	; api:defaultFormatter spec:HtmlFormatter
 	; api:viewer api:labelledDescribeViewer, api:describeViewer, api:basicViewer
 	; api:endpoint
 		spec:describe
 	; api:variable [api:name "_exceptionIfEmpty"; api:value "no"]
-	; api:variable [api:name "_resourceRoot"; api:value "http://localhost/elda-assets/"]
+	; api:variable [api:name "_resourceRoot"; api:value "http://localhost:8080/elda-assets/"]
 	.
 
 spec:HtmlFormatter a api:XsltFormatter
 	; api:name "html"
 	; api:mimeType "text/html; charset=utf-8"
-	; api:stylesheet "http://localhost/elda-assets/xslt/result.xsl"
+	; api:stylesheet "http://localhost:8080/elda-assets/xslt/result.xsl"
 	.
 
 # URIs genericas definidas por la NTI:
