@@ -1,0 +1,23 @@
+#!/bin/bash
+
+export WEBAPPS=/usr/share/tomcat/webapps
+export ELDAGIT=/home/chris/EldaThings/elda-in-github
+export SPECS=$ELDAGIT/elda-standalone/src/main/webapp/specs
+
+service tomcat stop
+rm -rf $WEBAPPS/*
+
+cp $ELDAGIT/elda-assets/target/elda-assets.war $WEBAPPS
+cp $ELDAGIT/elda-common/target/elda-common.war $WEBAPPS
+
+rm -rf /etc/elda/conf.d/elda-common/*
+cp /home/chris/EldaThings/elda-in-github/run-common/chris-config.ttl /etc/elda/conf.d/elda-common
+
+mkdir -p /tmp/elda/data
+cp /home/chris/EldaThings/elda-in-github/run-common/example-data.ttl /tmp/elda/data 
+
+
+rm -rf /var/log/tomcat/*
+service tomcat start
+
+journalctl -f -u tomcat
