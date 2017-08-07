@@ -3,10 +3,10 @@
 
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.epimorphics.lda</groupId>
-  <artifactId>doc</artifactId>
+  <artifactId>elda</artifactId>
   <version>1.4.1</version>
   <packaging>pom</packaging>
-  <name>doc</name>
+  <name>elda</name>
   <description>Top level linked data API project</description>
 
   <scm>
